@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+//importing the Math to be able to use Random class
 import 'dart:math';
+//importing the package to be able to use our phone shake
 import 'package:shake/shake.dart';
 
+//Original text will be displayed
 String answer = 'ASK YOUR QUESTION';
+
+//List of possible numbers to be shuffled
 List answers = [
   'IT IS CERTAIN',
   'WITHOUT A DOUBT',
@@ -15,6 +20,7 @@ List answers = [
 
 void main() => runApp(
       MaterialApp(
+        //removing debug label
         debugShowCheckedModeBanner: false,
         home: BallPage(),
       ),
@@ -36,11 +42,15 @@ class Ball extends StatefulWidget {
 
 class _BallState extends State {
   @override
+  //initialising the state
   void initState() {
     super.initState();
+
+    //specific ShakeDetector class from the package imported
     ShakeDetector detector = ShakeDetector.autoStart(
       onPhoneShake: () {
         setState(() {
+          // randomising the list elements to be displayed
           answer = answers[Random().nextInt(7)];
         });
       },
