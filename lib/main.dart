@@ -50,7 +50,7 @@ class _BallState extends State {
     ShakeDetector detector = ShakeDetector.autoStart(
       onPhoneShake: () {
         setState(() {
-          // randomising the list elements to be displayed
+          // randomising the list answers to be displayed
           answer = answers[Random().nextInt(7)];
         });
       },
