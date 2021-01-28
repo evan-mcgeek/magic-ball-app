@@ -42,7 +42,7 @@ class Ball extends StatefulWidget {
 
 class _BallState extends State {
   @override
-  //initialising the state
+  //initialising our state
   void initState() {
     super.initState();
 
